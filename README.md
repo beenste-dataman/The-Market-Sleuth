@@ -20,3 +20,10 @@ You will also receive basic summary stats printed.
 
 
 *Visualizations in Report Coming Soon*
+
+---
+
+
+#### Dependencies
+
+![Screenshot 2023-03-31 at 10 43 00 PM](https://user-images.githubusercontent.com/50429213/229267914-77e3f099-6c27-4268-841b-b9a81107ba9f.png)
