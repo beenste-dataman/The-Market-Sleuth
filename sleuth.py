@@ -63,8 +63,6 @@ art = '''
 print(art)
 
 
-
-
 def get_social_media_results(query):
     url = "https://social-links-search.p.rapidapi.com/search-social-links"
     querystring = {
@@ -72,7 +70,7 @@ def get_social_media_results(query):
         "social_networks": "facebook,tiktok,instagram,snapchat,twitter,youtube,linkedin,github,pinterest"
     }
     headers = {
-        "X-RapidAPI-Key": "Put your key here, or just use an env variable like an adult.",
+        "X-RapidAPI-Key": "Put your key here, or use an env variable like an adult.",
         "X-RapidAPI-Host": "social-links-search.p.rapidapi.com"
     }
 
@@ -231,7 +229,8 @@ def serve_html(filename, port=8000):
     httpd = socketserver.TCPServer(("", available_port), Handler)
 
     def run_server():
-        click.echo(f'Serving on {click.style(f"http://localhost:{available_port}", fg="blue", underline=True)}...')
+        print('-' * 45)
+        click.echo(f'Serving on {click.style(f"http://localhost:{available_port}/search_results.html", fg="blue", underline=True)}...')
         httpd.serve_forever()
 
     t = threading.Thread(target=run_server)
@@ -239,7 +238,7 @@ def serve_html(filename, port=8000):
 
     input("Press enter to stop the server...")
     httpd.shutdown()
-
+    print('-' * 45)
 def find_available_port(port):
     while True:
         try:
@@ -251,13 +250,17 @@ def find_available_port(port):
 
 
 def display_summary_stats(aggregated_results):
-    print("Summary statistics:")
+    print('-' * 45)
+    print('-' * 45)
+    print("Summary:")
     total_count = 0
     for network, results in aggregated_results.items():
         count = len(results)
         total_count += count
         print(f"{network.capitalize()}: {count} results")
     print(f"Total: {total_count} results")
+    print('-' * 45)
+    print('-' * 45)
 
 
 
@@ -273,7 +276,11 @@ def save_html(html, filename):
 
 
 if __name__ == "__main__":
+    print('-' * 45)
+    print('-' * 45)
     query = str(input('Input your search query here:'))
+    print('-' * 45)
+    print('-' * 45)
     results = get_social_media_results(query)
     aggregated_results = aggregate_results(results)
     html = generate_html(aggregated_results)
