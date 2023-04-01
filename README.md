@@ -2,7 +2,7 @@
 
 ---
 
-Gain market insight by searching for any keyword on facebook,tiktok,instagram,snapchat,twitter,youtube,linkedin,github, or pinterest. This requires a RapidAPI key. 
+Gain market insight by searching for any keyword on facebook,tiktok,instagram,snapchat,twitter,youtube,linkedin,github, or pinterest. This requires a RapidAPI key. 'no-server.py' is a version that just saves the file for manual viewing. The main version hosts for you. 
 
 ---
 
